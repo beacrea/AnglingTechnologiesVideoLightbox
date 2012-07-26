@@ -51,8 +51,56 @@
 			border-collapse: collapse;
 			border-spacing: 0;
 		}
+
+		/**********
+		User Styles
+		**********/
+		/* Globals */
+		body {background-color: #333;}
+		.clearfix:after {
+		     visibility: hidden;
+		     display: block;
+		     font-size: 0;
+		     content: " ";
+		     clear: both;
+		     height: 0;
+		     }
+		.clearfix { display: inline-block; }
+		/* start commented backslash hack \*/
+		* html .clearfix { height: 1%; }
+		.clearfix { display: block; }
+		/* close commented backslash hack */
+
+		/* Branding Colors */
+		.blue { color:21A4DD; }
+
+		/* Production Styles */
+		#vidContainer { width:800px; padding:1em; margin:10% auto;}
+
+		/* Final Styles (Actually Get Used) */
+		#vidContainer { background:#fff; border:0.3em solid #21A4DD; }
+			#vidFrame, #formContainer { float: left; }
+			#vidFrame { width:68%; margin-right:2%; background:#000; }
+			#vidFrame * { max-width: 100%; height: 19em; }
+			#formContainer { width:30%; }
+			#formContainer img { width:100%; }
+
+		/* Progressive Enhancement */
+		.dropShadow {
+			-moz-box-shadow: 4px 4px 10px black;
+			-webkit-box-shadow: 4px 4px 10px black;
+			box-shadow: 4px 4px 10px black;
+			}
 		</style>
 	</head>
 	<body>
+		<div id="vidContainer" class="clearfix">
+			<div id="vidFrame" class="dropShadow">
+				<iframe src="http://player.vimeo.com/video/36820781?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="100%" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+			</div><!-- end #vidFrame -->
+			<div id="formContainer">
+				<img src="img/AT_Logo_medTrans.png">
+			</div><!-- end #formContainer -->
+		</div><!-- end #vidContainer -->
 	</body>
 </html>
